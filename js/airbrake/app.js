@@ -1,0 +1,2 @@
+require.config({paths:{airbrakeJs:'node_modules/airbrake-js/dist'}});require(['airbrakeJs/client','airbrakeJs/instrumentation/jquery'],function(AirbrakeClient,instrumentJQuery){var airbrake=new AirbrakeClient({projectId:113120,projectKey:'affd4cb51e72e5bf7c02296f31ab5e63'});if(window.jQuery){instrumentJQuery(airbrake,jQuery);}
+window.onerror=function(message,file,line){airbrake.notify({error:{message:message,fileName:file,lineNumber:line}});}});
